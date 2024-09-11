@@ -8,8 +8,10 @@ export class UserGetOneById {
     async run(
         id: string
     ): Promise<User> {
-        const user = this.repository.getOneById(new UserId(id));
+        const user = await this.repository.getOneById(new UserId(id));
+        /**Creamos nuestro propio tipo de error, para luego preguntar de que tipo es el error, 
+         * si es instancia de este tipo respondemos de una u otra manera */
         if (!user) throw new UserNotFoundError('User Not Found')
-        return user
+        return user;
     }
 }
