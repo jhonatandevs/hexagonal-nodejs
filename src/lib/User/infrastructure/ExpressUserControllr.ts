@@ -1,6 +1,6 @@
 /** Va a estar haciendo uso de TODOS los casos d uso que ya tenemos definidos */
 import { Request, Response } from 'express'
-import { ServiceContainer } from '../../Shared/infrastructure/ServiceContainer'
+import { ServiceContainer } from '../../../../Shared/infrastructure/ServiceContainer'
 import { UserNotFoundError } from '../domain/UserNotFoundError';
 export class ExpressUserController {
     async getAll(req: Request, res: Response) {
