@@ -3,6 +3,7 @@ import { Request, Response, NextFunction } from 'express'
 import { ExpressUserRouter } from './lib/User/infrastructure/ExpressUserRouter';
 const app = express();
 app.use(express.json())
+/** Aqui podemos ejecutar varios routers, dependiendo del dominio o de la funcionalidad */
 app.use(ExpressUserRouter)
 /** Al colocar de primero los errores, express sabe que vamos a usarlo como middleware para manejo de errores*/
 app.use((err: unknown, req: Request, res: Response, next: NextFunction) => {
