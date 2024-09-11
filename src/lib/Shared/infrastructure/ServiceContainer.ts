@@ -8,8 +8,8 @@ import { UserCreate } from "../../User/application/UserCreate/UserCreate";
 import { PostgresUserRepository } from "../../User/infrastructure/PostgresUserRepository";
 
 //Podemos facilmente cambiar de DB
-// const userRepository = new InmemoryUserRepository();
-const userRepository = new PostgresUserRepository('url');
+const userRepository = new InmemoryUserRepository();
+// const userRepository = new PostgresUserRepository('url');
 export const ServiceContainer = {
     user:{
         getAll: new UserGetAll(userRepository),
